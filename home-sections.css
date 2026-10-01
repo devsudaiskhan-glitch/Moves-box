@@ -1,0 +1,675 @@
+/* =========================================================
+   MOVIE BOX — HOME SECTIONS
+   Premium cinematic styling for additional home sections
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Shared section enhancements
+   --------------------------------------------------------- */
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #d9b56d;
+}
+
+.section-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9b56d
+  );
+
+  opacity: 0.8;
+}
+
+
+/* ---------------------------------------------------------
+   PERSONALIZED / RECOMMENDED SECTION
+   --------------------------------------------------------- */
+
+.personalized-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.personalized-section::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -12%;
+  width: 420px;
+  height: 420px;
+
+  background: radial-gradient(
+    circle,
+    rgba(217, 181, 109, 0.08),
+    transparent 68%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.personalized-section .section-head {
+  position: relative;
+}
+
+.personalized-section .section-head::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+
+  width: min(220px, 28%);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 181, 109, 0.35)
+  );
+}
+
+
+/* ---------------------------------------------------------
+   FUTURE DISCOVERY
+   --------------------------------------------------------- */
+
+.future-discovery {
+  position: relative;
+  isolation: isolate;
+
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.future-discovery::before {
+  content: "";
+  position: absolute;
+  inset: 12% 5%;
+
+  border-radius: 40px;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(217, 181, 109, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(130, 100, 190, 0.06),
+      transparent 35%
+    );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.future-discovery .container {
+  position: relative;
+}
+
+.future-discovery .section-head {
+  max-width: 780px;
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.future-discovery .section-head::before {
+  content: "";
+  display: block;
+
+  width: 70px;
+  height: 1px;
+
+  margin: 0 auto 1.5rem;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9b56d,
+    transparent
+  );
+}
+
+.future-discovery .section-kicker:first-child {
+  color: #d9b56d;
+}
+
+
+/* ---------------------------------------------------------
+   FUTURE DISCOVERY CARDS
+   Works when cards are added later
+   --------------------------------------------------------- */
+
+.future-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+}
+
+.future-discovery-card {
+  position: relative;
+
+  min-height: 190px;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.future-discovery-card::before {
+  content: "";
+
+  position: absolute;
+  top: -80px;
+  right: -80px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(217, 181, 109, 0.13),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.future-discovery-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(217, 181, 109, 0.3);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 181, 109, 0.07),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(217, 181, 109, 0.04);
+}
+
+.future-discovery-card-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  color: #f0d69c;
+
+  background: rgba(217, 181, 109, 0.09);
+  border: 1px solid rgba(217, 181, 109, 0.16);
+
+  font-size: 1.15rem;
+}
+
+.future-discovery-card h3 {
+  margin: 1.3rem 0 0.45rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: #f7f3eb;
+}
+
+.future-discovery-card p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   FINAL CTA
+   --------------------------------------------------------- */
+
+.final-cta {
+  position: relative;
+  isolation: isolate;
+
+  padding:
+    clamp(4rem, 8vw, 7rem)
+    0;
+}
+
+.final-cta::before {
+  content: "";
+
+  position: absolute;
+  inset: 8% 3%;
+
+  border-radius: 36px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(217, 181, 109, 0.14),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  z-index: -1;
+}
+
+.final-cta-content {
+  max-width: 760px;
+
+  margin-inline: auto;
+  padding: 2rem;
+
+  text-align: center;
+}
+
+.final-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #d9b56d;
+}
+
+.final-cta-eyebrow::before,
+.final-cta-eyebrow::after {
+  content: "";
+
+  width: 22px;
+  height: 1px;
+
+  background: rgba(217, 181, 109, 0.55);
+}
+
+.final-cta h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  color: #fff;
+}
+
+.final-cta p {
+  max-width: 590px;
+
+  margin: 1.25rem auto 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  margin-top: 2rem;
+}
+
+
+/* ---------------------------------------------------------
+   GENRE DISCOVERY
+   --------------------------------------------------------- */
+
+.genre-section {
+  position: relative;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.genre-pill {
+  position: relative;
+
+  min-height: 46px;
+  padding: 0.72rem 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.82rem;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.genre-pill:hover {
+  transform: translateY(-2px);
+
+  color: #f5dfb1;
+
+  border-color: rgba(217, 181, 109, 0.34);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 181, 109, 0.09),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.genre-pill:focus-visible {
+  outline: 2px solid #d9b56d;
+  outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   QUICK DISCOVERY
+   --------------------------------------------------------- */
+
+.quick-discovery {
+  position: relative;
+}
+
+.quick-discovery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.quick-discovery-card {
+  position: relative;
+
+  padding: 1.4rem;
+
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    background 250ms ease;
+}
+
+.quick-discovery-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(217, 181, 109, 0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 181, 109, 0.07),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.quick-discovery-card h3 {
+  margin: 0;
+
+  font-size: 1rem;
+  color: #f7f3eb;
+}
+
+.quick-discovery-card p {
+  margin: 0.55rem 0 0;
+
+  color: rgba(255, 255, 255, 0.56);
+
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.quick-discovery-card a {
+  margin-top: 1.2rem;
+
+  color: #d9b56d;
+
+  font-size: 0.8rem;
+  font-weight: 750;
+
+  text-decoration: none;
+}
+
+.quick-discovery-card a:hover {
+  color: #f0d69c;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .future-discovery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .quick-discovery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .personalized-section .section-head::after {
+    display: none;
+  }
+
+  .future-discovery {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .final-cta::before {
+    inset: 5% 0;
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .future-discovery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-discovery-card {
+    min-height: 165px;
+  }
+
+  .final-cta-content {
+    padding: 1.5rem;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .final-cta p {
+    font-size: 0.9rem;
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .final-cta-actions .btn {
+    width: 100%;
+  }
+
+  .genre-list {
+    gap: 0.55rem;
+  }
+
+  .genre-pill {
+    min-height: 42px;
+    padding: 0.6rem 0.85rem;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .future-discovery-card,
+  .genre-pill,
+  .quick-discovery-card {
+    transition: none;
+  }
+
+  .future-discovery-card:hover,
+  .genre-pill:hover,
+  .quick-discovery-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   FUTURE CARD STATUS
+   --------------------------------------------------------- */
+
+.future-discovery-head {
+  text-align: center;
+}
+
+.future-discovery-head > div {
+  margin-inline: auto;
+}
+
+.future-card-status {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  margin-top: 1.5rem;
+  padding: 0.4rem 0.7rem;
+
+  border: 1px solid rgba(217, 181, 109, 0.14);
+  border-radius: 999px;
+
+  background: rgba(217, 181, 109, 0.055);
+
+  color: rgba(240, 214, 156, 0.72);
+
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

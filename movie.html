@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Movie Details — Movie Box</title>
+    <meta name="description" content="Explore a movie in cinematic detail." />
+    <meta property="og:title" content="Movie Details — Movie Box" />
+    <meta
+      property="og:description"
+      content="Explore a movie in cinematic detail."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="movie">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Movie Box home"
+          ><span class="brand-mark">M</span><span>MOVIE BOX</span></a
+        >
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="discover.html">Discover</a>
+          <a class="nav-link" href="watchlist.html">My Collection</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="icon-btn desktop-only"
+            href="discover.html"
+            aria-label="Search"
+            >⌕</a
+          >
+          <button
+            class="icon-btn mobile-toggle"
+            id="mobileToggle"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div class="menu-panel" id="mobilePanel">
+        <a href="index.html">Home</a><a href="discover.html">Discover</a
+        ><a href="watchlist.html">My Collection</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="movieDetails">
+        <div class="details-hero">
+          <div id="detailsBg" class="details-bg"></div>
+          <div class="container details-content">
+            <div class="details-layout">
+              <div class="details-poster">
+                <img
+                  id="detailsPoster"
+                  src="assets/images/placeholder.svg"
+                  alt=""
+                />
+              </div>
+              <div class="details-copy">
+                <div class="eyebrow">Movie details</div>
+                <h1 id="detailsTitle">Loading…</h1>
+                <div id="detailsTagline" class="tagline"></div>
+                <div id="detailsMeta" class="meta"></div>
+                <p id="detailsDesc"></p>
+                <div class="hero-actions">
+                  <button id="trailerBtn" class="btn primary">▶ Trailer</button
+                  ><button id="favoriteBtn" class="btn ghost">♡ Favorite</button
+                  ><button id="watchlistBtn" class="btn ghost">
+                    + Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="container">
+            <div class="detail-columns">
+              <div class="info-card">
+                <h3>About the film</h3>
+                <div class="detail-list">
+                  <div class="detail-item">
+                    <small>Director</small><span id="director">—</span>
+                  </div>
+                  <div class="detail-item">
+                    <small>Cast</small><span id="cast">—</span>
+                  </div>
+                  <div class="detail-item">
+                    <small>Language</small><span id="language">—</span>
+                  </div>
+                  <div class="detail-item">
+                    <small>Certification</small
+                    ><span id="certification">—</span>
+                  </div>
+                  <div class="detail-item">
+                    <small>Keywords</small><span id="keywords">—</span>
+                  </div>
+                </div>
+              </div>
+              <div class="trailer">
+                <div>
+                  <div class="eyebrow">Playback</div>
+                  <h3>Trailer-ready architecture</h3>
+                  <p style="color: var(--muted)">
+                    A legitimate trailer can be connected later without changing
+                    the UI layer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div><h2 class="section-title">Similar movies</h2></div>
+            </div>
+            <div id="similarRail" class="rail"></div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div><h2 class="section-title">Recommended next</h2></div>
+            </div>
+            <div id="recommendedRail" class="rail"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="index.html"
+              ><span class="brand-mark">M</span><span>MOVIE BOX</span></a
+            >
+            <p>
+              A cinematic movie discovery experience powered by TMDB, semantic
+              HTML, modern CSS and vanilla JavaScript.
+            </p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <a href="discover.html">Discover</a
+            ><a href="watchlist.html">My Collection</a>
+          </div>
+          <div>
+            <h3>Library</h3>
+            <a href="watchlist.html">Watchlist</a
+            ><a href="watchlist.html">Favorites</a
+            ><a href="watchlist.html">Recently Viewed</a>
+          </div>
+          <div>
+            <h3>Product</h3>
+            <a href="README.md">Architecture</a
+            ><a href="README.md">Local data model</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Movie Box</span
+          ><span>Original concept · No fake streaming or authentication</span>
+        </div>
+      </div>
+      <div class="tmdb-attribution">
+        This product uses the TMDB API but is not endorsed or certified by TMDB.
+      </div>
+    </footer>
+    <div
+      id="modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Movie dialog"
+    >
+      <div class="modal-panel">
+        <button class="icon-btn modal-close" aria-label="Close dialog">
+          ×
+        </button>
+        <div id="modalBody" class="modal-body"></div>
+      </div>
+    </div>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="tmdb-live.js"></script>
+  </body>
+</html>

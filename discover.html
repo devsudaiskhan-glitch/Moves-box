@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Discover — Movie Box</title>
+    <meta
+      name="description"
+      content="Search and filter the Movie Box library."
+    />
+    <meta property="og:title" content="Discover — Movie Box" />
+    <meta
+      property="og:description"
+      content="Search and filter the Movie Box library."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="discover">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Movie Box home"
+          ><span class="brand-mark">M</span><span>MOVIE BOX</span></a
+        >
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="discover.html">Discover</a>
+          <a class="nav-link" href="watchlist.html">My Collection</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="icon-btn desktop-only"
+            href="discover.html"
+            aria-label="Search"
+            >⌕</a
+          >
+          <button
+            class="icon-btn mobile-toggle"
+            id="mobileToggle"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div class="menu-panel" id="mobilePanel">
+        <a href="index.html">Home</a><a href="discover.html">Discover</a
+        ><a href="watchlist.html">My Collection</a>
+      </div>
+    </header>
+
+    <main id="main" class="page-main">
+      <div class="container">
+        <div class="eyebrow">Discovery engine</div>
+        <h1 class="page-title">Find your next film.</h1>
+        <p class="page-subtitle">
+          Search across titles, genres, directors, cast and keywords. Combine
+          filters and sorting without losing the context.
+        </p>
+        <div class="search-bar">
+          <div class="search-wrap">
+            <span class="search-icon">⌕</span
+            ><label class="sr-only" for="searchInput">Search movies</label
+            ><input
+              id="searchInput"
+              class="input"
+              placeholder="Search titles, genres, cast, directors…"
+              autocomplete="off"
+            />
+          </div>
+          <button class="btn ghost" id="resetFilters">Reset</button>
+        </div>
+   <div class="filter-bar">
+
+  <div class="filter-row">
+
+    <label class="sr-only" for="genreFilter">Genre</label>
+    <select id="genreFilter" class="select filter-select">
+      <option value="">All genres</option>
+      <option>Action</option>
+      <option>Adventure</option>
+      <option>Crime</option>
+      <option>Drama</option>
+      <option>Horror</option>
+      <option>Mystery</option>
+      <option>Romance</option>
+      <option>Sci-Fi</option>
+      <option>Thriller</option>
+    </select>
+
+
+    <label class="sr-only" for="yearFilter">Year</label>
+    <select id="yearFilter" class="select filter-select">
+      <option value="">All years</option>
+      <option>2026</option>
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+      <option>2022</option>
+      <option>2021</option>
+    </select>
+
+
+    <label class="sr-only" for="ratingFilter">Rating</label>
+    <select id="ratingFilter" class="select filter-select">
+      <option value="">Any rating</option>
+      <option value="8">8.0+</option>
+      <option value="8.5">8.5+</option>
+    </select>
+
+
+    <label class="sr-only" for="runtimeFilter">Runtime</label>
+    <select id="runtimeFilter" class="select filter-select">
+      <option value="">Any runtime</option>
+      <option value="short">Under 110m</option>
+      <option value="medium">110–130m</option>
+      <option value="long">Over 130m</option>
+    </select>
+
+
+    <label class="sr-only" for="languageFilter">Language</label>
+    <select id="languageFilter" class="select filter-select">
+      <option value="">Any language</option>
+      <option>English</option>
+      <option>French</option>
+    </select>
+
+
+    <label class="sr-only" for="sortFilter">Sort</label>
+    <select id="sortFilter" class="select filter-select sort-select">
+      <option value="popularity">Sort: Popularity</option>
+      <option value="rating">Sort: Rating</option>
+      <option value="newest">Sort: Newest</option>
+      <option value="oldest">Sort: Oldest</option>
+      <option value="az">Sort: A–Z</option>
+      <option value="za">Sort: Z–A</option>
+    </select>
+
+  </div>
+
+</div>
+       
+        <div id="discoverGrid" class="grid"></div>
+        <div style="display: flex; justify-content: center; margin-top: 28px">
+          <button id="loadMore" class="btn ghost">Load more</button>
+        </div>
+      </div>
+    </main>
+
+  <footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Column 1 -->
+      <div class="footer-column footer-brand-column">
+        <a class="brand footer-brand" href="index.html" aria-label="Movie Box home">
+          <span class="brand-mark">M</span>
+          <span>MOVIE BOX</span>
+        </a>
+
+        <p class="footer-description">
+          A cinematic movie discovery experience powered by TMDB,
+          semantic HTML, modern CSS and vanilla JavaScript.
+        </p>
+      </div>
+
+
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h3>Explore</h3>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="discover.html">Discover</a>
+          <a href="watchlist.html">My Collection</a>
+        </div>
+      </div>
+
+
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h3>Library</h3>
+
+        <div class="footer-links">
+          <a href="watchlist.html">Watchlist</a>
+          <a href="watchlist.html">Favorites</a>
+          <a href="watchlist.html">Recently Viewed</a>
+        </div>
+      </div>
+
+
+      <!-- Column 4 -->
+      <div class="footer-column">
+        <h3>Product</h3>
+
+        <div class="footer-links">
+          <a href="README.md">Architecture</a>
+          <a href="README.md">Local Data Model</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+
+      <span>© 2026 Movie Box</span>
+
+      <span>
+        Original concept · No fake streaming or authentication
+      </span>
+
+    </div>
+
+
+    <!-- TMDB attribution -->
+    <div class="tmdb-attribution">
+      This product uses the TMDB API but is not endorsed or certified by TMDB.
+    </div>
+
+  </div>
+</footer>
+    <div
+      id="modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Movie dialog"
+    >
+      <div class="modal-panel">
+        <button class="icon-btn modal-close" aria-label="Close dialog">
+          ×
+        </button>
+        <div id="modalBody" class="modal-body"></div>
+      </div>
+    </div>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="tmdb-live.js"></script>
+  </body>
+</html>

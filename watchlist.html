@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Collection — Movie Box</title>
+    <meta name="description" content="Your personal Movie Box library." />
+    <meta property="og:title" content="My Collection — Movie Box" />
+    <meta
+      property="og:description"
+      content="Your personal Movie Box library."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="collection">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Movie Box home"
+          ><span class="brand-mark">M</span><span>MOVIE BOX</span></a
+        >
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="discover.html">Discover</a>
+          <a class="nav-link active" href="watchlist.html">My Collection</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="icon-btn desktop-only"
+            href="discover.html"
+            aria-label="Search"
+            >⌕</a
+          >
+          <button
+            class="icon-btn mobile-toggle"
+            id="mobileToggle"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div class="menu-panel" id="mobilePanel">
+        <a href="index.html">Home</a><a href="discover.html">Discover</a
+        ><a href="watchlist.html">My Collection</a>
+      </div>
+    </header>
+
+    <main id="main" class="page-main">
+      <div class="container">
+        <div class="eyebrow">Personal library</div>
+        <h1 id="collectionTitle" class="page-title">My Watchlist</h1>
+        <p id="collectionDesc" class="page-subtitle">
+          A private shelf for films you want to explore.
+        </p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0">
+          <button class="btn small active" data-collection-tab="watchlist">
+            Watchlist</button
+          ><button class="btn small" data-collection-tab="favorites">
+            Favorites</button
+          ><button class="btn small" data-collection-tab="recent">
+            Recently Viewed</button
+          ><span
+            id="collectionCount"
+            class="result-count"
+            style="align-self: center; margin-left: auto"
+          ></span>
+        </div>
+        <div id="movieGrid" class="grid"></div>
+      </div>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Column 1 -->
+      <div class="footer-column footer-brand-column">
+        <a class="brand footer-brand" href="index.html" aria-label="Movie Box home">
+          <span class="brand-mark">M</span>
+          <span>MOVIE BOX</span>
+        </a>
+
+        <p class="footer-description">
+          A cinematic movie discovery experience powered by TMDB,
+          semantic HTML, modern CSS and vanilla JavaScript.
+        </p>
+      </div>
+
+
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h3>Explore</h3>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="discover.html">Discover</a>
+          <a href="watchlist.html">My Collection</a>
+        </div>
+      </div>
+
+
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h3>Library</h3>
+
+        <div class="footer-links">
+          <a href="watchlist.html">Watchlist</a>
+          <a href="watchlist.html">Favorites</a>
+          <a href="watchlist.html">Recently Viewed</a>
+        </div>
+      </div>
+
+
+      <!-- Column 4 -->
+      <div class="footer-column">
+        <h3>Product</h3>
+
+        <div class="footer-links">
+          <a href="README.md">Architecture</a>
+          <a href="README.md">Local Data Model</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+
+      <span>© 2026 Movie Box</span>
+
+      <span>
+        Original concept · No fake streaming or authentication
+      </span>
+
+    </div>
+
+
+    <!-- TMDB attribution -->
+    <div class="tmdb-attribution">
+      This product uses the TMDB API but is not endorsed or certified by TMDB.
+    </div>
+
+  </div>
+</footer>
+    <div
+      id="modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Movie dialog"
+    >
+      <div class="modal-panel">
+        <button class="icon-btn modal-close" aria-label="Close dialog">
+          ×
+        </button>
+        <div id="modalBody" class="modal-body"></div>
+      </div>
+    </div>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+    <script src="tmdb-live.js"></script>
+  </body>
+</html>
